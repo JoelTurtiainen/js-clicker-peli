@@ -1,0 +1,40 @@
+[
+	[
+		{
+			"name": "Worm",
+			"description": "Early bird gets the worm.",
+			"stat": "click",
+			"power": 1,
+			"max": 20,
+			"price": 20
+		},
+		{
+			"name": "Gummy Worm",
+			"description": "No artificial flavor.",
+			"stat": "click",
+			"power": 3,
+			"max": 10,
+			"price": 25
+		}
+	],
+	[
+		{
+			"name": "Tri-Hook",
+			"description": "TODO",
+			"stat": "click",
+			"power": 3,
+			"max": 10,
+			"price": 25
+		}
+	],
+	[
+		{
+			"name": "Torn Fishing Net",
+			"description": "TODO",
+			"stat": "auto",
+			"power": 1,
+			"max": 10,
+			"price": 25
+		}
+	]
+]
