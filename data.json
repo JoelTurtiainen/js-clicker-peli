@@ -14,17 +14,33 @@
 			"stat": "click",
 			"power": 3,
 			"max": 10,
-			"price": 25
+			"price": 200
 		}
 	],
 	[
 		{
-			"name": "Tri-Hook",
+			"name": "Bait Hook",
+			"description": "TODO",
+			"stat": "click",
+			"power": 1,
+			"max": 10,
+			"price": 25
+		},
+		{
+			"name": "Double Hook",
+			"description": "TODO",
+			"stat": "click",
+			"power": 2,
+			"max": 10,
+			"price": 100
+		},
+		{
+			"name": "Treble Hook",
 			"description": "TODO",
 			"stat": "click",
 			"power": 3,
 			"max": 10,
-			"price": 25
+			"price": 200
 		}
 	],
 	[
@@ -35,6 +51,22 @@
 			"power": 1,
 			"max": 10,
 			"price": 25
+		},
+		{
+			"name": "Net",
+			"description": "TODO",
+			"stat": "auto",
+			"power": 2,
+			"max": 10,
+			"price": 100
+		},
+		{
+			"name": "Blue Net",
+			"description": "TODO",
+			"stat": "auto",
+			"power": 1,
+			"max": 10,
+			"price": 200
 		}
 	]
 ]
