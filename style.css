@@ -1,46 +1,43 @@
-:root{
---color-1-darkest: #ce8d01;
---color-1-darker: #f2a501;
---color-1-dark: #feb519;
---color-1: #fec13c;
---color-1-light: #fecc60;
---color-1-lighter: #fed783;
---color-1-lightest: #ffe3a7;
+:root {
+  --color-1-darkest: #ce8d01;
+  --color-1-darker: #f2a501;
+  --color-1-dark: #feb519;
+  --color-1: #fec13c;
+  --color-1-light: #fecc60;
+  --color-1-lighter: #fed783;
+  --color-1-lightest: #ffe3a7;
 
---color-2-darkest: #ffe448;
---color-2-darker: #ffe96c;
---color-2-dark: #ffee8f;
---color-2: #fff4b3;
---color-2-light: #fff9d7;
---color-2-lighter: #fffefa;
---color-2-lightest: #ffffff;
+  --color-2-darkest: #ffe448;
+  --color-2-darker: #ffe96c;
+  --color-2-dark: #ffee8f;
+  --color-2: #fff4b3;
+  --color-2-light: #fff9d7;
+  --color-2-lighter: #fffefa;
+  --color-2-lightest: #ffffff;
 
---color-3-darkest: #817c0b;
---color-3-darker: #a29b0e;
---color-3-dark: #c3ba11;
---color-3: #e4da14;
---color-3-light: #ede32f;
---color-3-lighter: #f0e850;
---color-3-lightest: #f3ec70;
+  --color-3-darkest: #817c0b;
+  --color-3-darker: #a29b0e;
+  --color-3-dark: #c3ba11;
+  --color-3: #e4da14;
+  --color-3-light: #ede32f;
+  --color-3-lighter: #f0e850;
+  --color-3-lightest: #f3ec70;
 
---color-4-darkest: #235b54;
---color-4-darker: #2c756c;
---color-4-dark: #368f83;
---color-4: #40a99b;
---color-4-light: #50bdae;
---color-4-lighter: #6ac7ba;
---color-4-lightest: #84d0c6;
+  --color-4-darkest: #235b54;
+  --color-4-darker: #2c756c;
+  --color-4-dark: #368f83;
+  --color-4: #40a99b;
+  --color-4-light: #50bdae;
+  --color-4-lighter: #6ac7ba;
+  --color-4-lightest: #84d0c6;
 
---color-5-darkest: #1e1a13;
---color-5-darker: #352c20;
---color-5-dark: #4b3f2d;
---color-5: #61523b;
---color-5-light: #776548;
---color-5-lighter: #8d7756;
---color-5-lightest: #a28a65;
-}
-
-img {
+  --color-5-darkest: #1e1a13;
+  --color-5-darker: #352c20;
+  --color-5-dark: #4b3f2d;
+  --color-5: #61523b;
+  --color-5-light: #776548;
+  --color-5-lighter: #8d7756;
+  --color-5-lightest: #a28a65;
   image-rendering: pixelated;
 }
 
@@ -48,24 +45,31 @@ body {
   text-align: center;
 }
 
+.image-border {
+  border: 40px solid;
+  border-image-source: url('img/border.png');
+  border-image-slice: 13;
+}
+
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-/* First half */
+/* Playfield */
 
 #game {
   display: grid;
-  grid-template-columns: 4fr 2fr;
-  min-height: 45vmax;
-  width: 100%;
+  grid-template-columns: 3fr 1fr;
+  height: 45hmax;
+  width: 99vmax;
 }
 
 #field {
   background-image: linear-gradient(steelblue, rgb(83, 83, 208));
   height: 100%;
   border: 1px solid green;
+  width: 100%;
   float: left;
 }
 
@@ -79,30 +83,67 @@ body {
   align-content: center;
 }
 
-/* Second half */
-
 #sidebar {
-  background-color: var(--color-5-lighter);
-  float: left;
+  display: grid;
+  grid-template-rows: 4fr 0.5fr 6fr;
 }
 
-#infobox {
-  background-color: var(--color-1-lightest);
-  border: 1px solid brown;
-  float: top;
-  padding: 20px;
-}
+/* Sidebar Top */
 
-#infobox li,
-#infobox ul {
+li,
+ul {
   padding: 0;
+  padding-top: 1px;
   margin: 0;
   list-style-type: none;
 }
 
+#infobox {
+  /* border: 1px solid brown; */
+  background-color: var(--color-4-dark);
+}
+
+#actions > button {
+  height: 100%;
+  width: 20%;
+}
+
+/*Sidebar Middle */
+.sidebar-middle {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.sidebar-middle li {
+  background-color: var(--color-5-lightest);
+  border: 5px var(--color-5) solid;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.sidebar-middle ul {
+  background-image: url('/img/beam.png');
+  background-color: var(--color-5-lightest);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  align-items: stretch;
+  height: 100%;
+}
+
+/* Sidebar Bottom */
+
+.sidebar-bottom {
+  background-color: var(--color-5-lightest);
+}
+
 #upgrades {
-  display: grid;
-  grid-template-columns:repeat(3, 1fr);
+  width: 100%;
+  float: right;
+  display: float;
   justify-items: center;
 }
 
@@ -111,22 +152,18 @@ body {
   border: 3px solid var(--color-5-dark);
   background-color: var(--color-5-lighter);
   border-radius: 5%;
-  width: 100%;
   padding: 5px;
 }
 
-.drawer > img{
+.drawer {
+  width: 100%;
+}
+
+.drawer > img {
   float: top;
   height: 50px;
   border: solid var(--color-5-dark);
   border-radius: 10px;
-}
-
-
-#actions > button {
-  float: left;
-  height: 100%;
-  width: 20%;
 }
 
 /* Animations */

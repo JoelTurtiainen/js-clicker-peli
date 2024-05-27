@@ -7,13 +7,18 @@ const player = {
   fishCount: 0,
   statClick: 1,
   statAuto: 0,
-  shopSelected: [0, 0],
+  groupSelected: 0,
+  itemSelected: 0,
+  itemsOwned: [[0,0,0,0], [0,0,0], [0,0,0]]
 }
 
-function displayInfo(item) {
+function displayInfo() {
+    const item = Object.values(data[player.groupSelected][player.itemSelected])
+    const itemCount = player.itemsOwned[player.groupSelected][player.itemSelected]
     console.log(item);
     const infoSpans = document.querySelectorAll('.info')
     infoSpans.forEach((span, i) => span.textContent = item[i]);
+    infoSpans[4].textContent = `${itemCount} / ${infoSpans[4].textContent}`
   }
 
 function updateStats() {
@@ -29,14 +34,10 @@ function onMouseOver(e) {
     const parent = e.target.parentElement
     const drawers = document.querySelectorAll('.drawer');
 
-    const drawerIndex = Array.prototype.indexOf.call(drawers, parent);
-    const itemIndex = Array.prototype.indexOf.call(parent.children, e.target);
+    player.groupSelected = Array.prototype.indexOf.call(drawers, parent);
+    player.itemSelected = Array.prototype.indexOf.call(parent.children, e.target);
 
-    const selected = Object.values(data[drawerIndex][itemIndex])
-    player.shopSelected = [drawerIndex, itemIndex]
-
-    console.log(player.shopSelected);
-    displayInfo(selected)
+    displayInfo()
   }
 }
 
@@ -54,12 +55,31 @@ function onClick(e) {
     player.fishCount += player.statClick
 
   } else if (e.target.id === 'purchase') {
-      onPurchase(e.target)
+      Purchase()
+  } else if (e.target.id === 'tabs') {
+    console.log(e.target.id);
+  } else {
+    console.log(e.target);
   }
 }
 
-function onPurchase(e) {
-  console.log(e);
+function Purchase() {
+  const itemData = data[player.groupSelected][player.itemSelected]
+  const itemCount = player.itemsOwned[player.groupSelected][player.itemSelected];
+
+  // if item max count is not exceeded & we have enough money for the purchase
+  if (itemCount < itemData.max && player.fishCount >= itemData.price) {
+    
+    player.fishCount -= itemData.price
+    player.itemsOwned[player.groupSelected][player.itemSelected]++
+
+    if (itemData.stat === 'click') {
+      player.statClick += itemData.power
+    } else {
+      player.statAuto += itemData.power
+    }
+    displayInfo()
+  } 
 }
 
 // console.log(data);
@@ -69,6 +89,13 @@ document.addEventListener('click', onClick);
 sidebar.addEventListener('mouseover', onMouseOver);
 sidebar.addEventListener('mouseout', onMouseOut);
 
+let ticks = 0
 setInterval(() => {
+  ticks++
+
   updateStats();
-}, 1000/15);
+
+  if (ticks % 10 === 0) {
+  player.fishCount += player.statAuto
+  }
+}, 100);
