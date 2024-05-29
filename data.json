@@ -1,12 +1,60 @@
 [
   [
     {
+      "name": "Bread",
+      "description": "TODO",
+      "stat": "click",
+      "power": 1,
+      "max": 10,
+      "price": 16
+    },
+    {
+      "name": "Corn",
+      "description": "ITS CORN!",
+      "stat": "click",
+      "power": 1,
+      "max": 10,
+      "price": 32
+    },
+    {
       "name": "Worm",
       "description": "Early bird gets the worm.",
       "stat": "click",
-      "power": 1,
-      "max": 20,
-      "price": 10
+      "power": 2,
+      "max": 10,
+      "price": 64
+    },
+    {
+      "name": "Spoon",
+      "description": "TODO",
+      "stat": "click",
+      "power": 2,
+      "max": 10,
+      "price": 128
+    },
+    {
+      "name": "Firefly",
+      "description": "TODO",
+      "stat": "click",
+      "power": 3,
+      "max": 10,
+      "price": 256
+    },
+    {
+      "name": "Spinner",
+      "description": "TODO",
+      "stat": "click",
+      "power": 3,
+      "max": 10,
+      "price": 512
+    },
+    {
+      "name": "Roe",
+      "description": "Fish eggs",
+      "stat": "click",
+      "power": 4,
+      "max": 5,
+      "price": 1024
     },
     {
       "name": "Gummy Worm",
@@ -14,17 +62,41 @@
       "stat": "click",
       "power": 3,
       "max": 10,
-      "price": 200
+      "price": 2048
+    },
+    {
+      "name": "Cola and Eggs",
+      "description": "Viral fishing hack",
+      "stat": "click",
+      "power": 10,
+      "max": 10,
+      "price": 4096
     }
   ],
   [
     {
       "name": "Bait Hook",
-      "description": "TODO",
+      "description": "You've gotta start from somewhere",
       "stat": "click",
       "power": 1,
       "max": 10,
       "price": 25
+    },
+    {
+      "name": "Bobber",
+      "description": "Boing",
+      "stat": "click",
+      "power": 2,
+      "max": 10,
+      "price": 100
+    },
+    {
+      "name": "Beer",
+      "description": "Fishermen's best beer",
+      "stat": "click",
+      "power": 3,
+      "max": 10,
+      "price": 200
     },
     {
       "name": "Double Hook",
@@ -41,6 +113,22 @@
       "power": 3,
       "max": 10,
       "price": 200
+    },
+    {
+      "name": "Fishing Hat",
+      "description": "TODO",
+      "stat": "click",
+      "power": 3,
+      "max": 10,
+      "price": 200
+    },
+    {
+      "name": "Sport Glasses",
+      "description": "Makes you feel professional",
+      "stat": "click",
+      "power": 3,
+      "max": 10,
+      "price": 200
     }
   ],
   [
@@ -49,24 +137,40 @@
       "description": "TODO",
       "stat": "auto",
       "power": 1,
-      "max": 10,
-      "price": 50
+      "max": 5,
+      "price": 64
+    },
+    {
+      "name": "DIY Fish Trap",
+      "description": "You followed a 5-minute life-hack video to craft this. Smells of hot-glue",
+      "stat": "auto",
+      "power": 2,
+      "max": 5,
+      "price": 128
+    },
+    {
+      "name": "Blue Net",
+      "description": "Made out of cheap blue universal rope",
+      "stat": "auto",
+      "power": 3,
+      "max": 5,
+      "price": 256
     },
     {
       "name": "Net",
       "description": "TODO",
       "stat": "auto",
-      "power": 2,
-      "max": 10,
-      "price": 500
+      "power": 4,
+      "max": 5,
+      "price": 512
     },
     {
-      "name": "Blue Net",
-      "description": "TODO",
+      "name": "Fish Trap",
+      "description": "For naughty fish",
       "stat": "auto",
-      "power": 3,
-      "max": 10,
-      "price": 1000
+      "power": 5,
+      "max": 5,
+      "price": 1024
     }
   ]
 ]

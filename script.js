@@ -1,101 +1,126 @@
 import data from './data.json' with { type: 'json' };
-
 const sidebar = document.getElementById('sidebar');
-const infobox = document.getElementById('infobox')
+const infobox = document.getElementById('infobox');
 
 const player = {
   fishCount: 0,
   statClick: 1,
   statAuto: 0,
-  groupSelected: 0,
-  itemSelected: 0,
-  itemsOwned: [[0,0,0,0], [0,0,0], [0,0,0]]
-}
+  activeTab: 0,
+  activeItem: 0,
+  itemsOwned: [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  ],
+};
 
 function displayInfo() {
-    const item = Object.values(data[player.groupSelected][player.itemSelected])
-    const itemCount = player.itemsOwned[player.groupSelected][player.itemSelected]
-    console.log(item);
-    const infoSpans = document.querySelectorAll('.info')
-    infoSpans.forEach((span, i) => span.textContent = item[i]);
-    infoSpans[4].textContent = `${itemCount} / ${infoSpans[4].textContent}`
-  }
+  const item = data[player.activeTab][player.activeItem];
+  const itemCount = player.itemsOwned[player.activeTab][player.activeItem];
+  const infoSpans = document.querySelectorAll('.info');
 
-function updateStats() {
-  const statSpans = document.querySelectorAll('#stats > li > span')
+  infoSpans[0].textContent = item.name
+  infoSpans[1].textContent = item.description
+  infoSpans[2].textContent = `${item.stat} + ${item.power}`;
+  infoSpans[3].textContent = `${itemCount} / ${item.max}`;
+  infoSpans[4].textContent = item.price
+}
+
+function updateHUD() {
+  const statSpans = document.querySelectorAll('#stats > li > span');
   for (let span of statSpans) {
-    span.textContent = player[span.id]
+    span.textContent = player[span.id];
   }
-  }
+}
 
 function onMouseOver(e) {
   if (e.target.nodeName === 'IMG') {
     e.target.style.backgroundColor = 'var(--color-4-darkest)';
-    const parent = e.target.parentElement
-    const drawers = document.querySelectorAll('.drawer');
+    const siblings = e.target.parentElement.children;
 
-    player.groupSelected = Array.prototype.indexOf.call(drawers, parent);
-    player.itemSelected = Array.prototype.indexOf.call(parent.children, e.target);
+    player.activeItem = Array.prototype.indexOf.call(siblings, e.target);
 
-    displayInfo()
+    displayInfo();
+  } else if (e.target.className === 'tab') {
+    e.target.style.backgroundColor = 'var(--color-2-light)';
   }
 }
 
+function changeTab(e) {
+  const siblings = e.target.parentElement.children;
+  const index = Array.prototype.indexOf.call(siblings, e.target);
+  const drawers = document.querySelectorAll('.drawer');
+  // Update player obj to represent new tab
+  player.activeTab = index;
+
+  // Hide all drawers first
+  drawers.forEach((i) => (i.className = 'drawer hidden'));
+
+  // Then unhide the active one
+  drawers[index].classList.remove('hidden');
+}
 
 function onMouseOut(e) {
   e.target.style.backgroundColor = '';
 }
 
-function onClick(e) {
-  if (e.target.id === 'whirl') { 
-    const water = document.getElementById('whirl')
-    water.classList.remove("jump")
-    water.offsetWidth
-    water.classList.add("jump")
-    player.fishCount += player.statClick
+function onWaterClick() {
+  // Increment Fish counter
+  player.fishCount += player.statClick;
 
+  // Animation stuff
+  const water = document.getElementById('whirl');
+  water.classList.remove('jump');
+  water.offsetWidth;
+  water.classList.add('jump');
+}
+
+function onClick(e) {
+  if (e.target.id === 'whirl') {
+    onWaterClick();
   } else if (e.target.id === 'purchase') {
-      Purchase()
-  } else if (e.target.id === 'tabs') {
-    console.log(e.target.id);
-  } else {
-    console.log(e.target);
+    Purchase();
+  } else if (e.target.className === 'tab') {
+    changeTab(e);
   }
 }
 
 function Purchase() {
-  const itemData = data[player.groupSelected][player.itemSelected]
-  const itemCount = player.itemsOwned[player.groupSelected][player.itemSelected];
+  const itemData = data[player.activeTab][player.activeItem];
+  const itemCount = player.itemsOwned[player.activeTab][player.activeItem];
 
-  // if item max count is not exceeded & we have enough money for the purchase
+  // 1. if item max count is not exceeded & we have enough money for the purchase
+  // 2. Subtract item's price from players fish
+  // 3. Increment corresponding owned counter
+  // 4. Add item stat to player stats
+  // 5. DisplayInfo so the owned count updates on store
+
   if (itemCount < itemData.max && player.fishCount >= itemData.price) {
-    
-    player.fishCount -= itemData.price
-    player.itemsOwned[player.groupSelected][player.itemSelected]++
+    player.fishCount -= itemData.price;
+    player.itemsOwned[player.activeTab][player.activeItem]++;
 
     if (itemData.stat === 'click') {
-      player.statClick += itemData.power
+      player.statClick += itemData.power;
     } else {
-      player.statAuto += itemData.power
+      player.statAuto += itemData.power;
     }
-    displayInfo()
-  } 
+    displayInfo();
+  }
 }
-
-// console.log(data);
-
 
 document.addEventListener('click', onClick);
 sidebar.addEventListener('mouseover', onMouseOver);
 sidebar.addEventListener('mouseout', onMouseOut);
+displayInfo();
 
-let ticks = 0
+let ticks = 0;
 setInterval(() => {
-  ticks++
+  ticks++;
 
-  updateStats();
-
+  updateHUD();
+  // every 1 second add fishes from autofishing to the total fish
   if (ticks % 10 === 0) {
-  player.fishCount += player.statAuto
+    player.fishCount += player.statAuto;
   }
 }, 100);
