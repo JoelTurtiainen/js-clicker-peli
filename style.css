@@ -41,8 +41,20 @@
 
   --font-light: #143430;
   --font-dark: #05100f;
-  image-rendering: pixelated;
+}
+
+/* Universal */
+
+* {
   user-select: none;
+  image-rendering: pixelated;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 body {
@@ -60,6 +72,20 @@ body {
 .hidden {
   display: none;
   visibility: hidden;
+}
+
+li,
+ul {
+  padding: 0;
+  padding-top: 1px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.hline {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 /* Playfield */
@@ -94,14 +120,6 @@ body {
   grid-template-rows: 4.5fr 0.5fr 6fr;
 }
 
-li,
-ul {
-  padding: 0;
-  padding-top: 1px;
-  margin: 0;
-  list-style-type: none;
-}
-
 /* Sidebar Top */
 
 .sidebar-top {
@@ -124,17 +142,16 @@ ul {
     margin-bottom: 5px;
   }
 }
-.hline {
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-}
 
 #purchase {
   background-color: var(--color-4-darker);
   border: 2px #143430 dotted;
   letter-spacing: 2px;
   font-style: italic;
+}
+
+#purchase:hover {
+  background-color: var(--color-4);
 }
 
 /*Sidebar Middle */
@@ -173,23 +190,15 @@ ul {
   justify-items: center;
 }
 
-.upgrade {
-  display: block;
-  border: 3px solid var(--color-5-dark);
-  background-color: var(--color-5-lighter);
-  border-radius: 5%;
-  padding: 5px;
-}
-
-.drawer {
-  width: 100%;
-}
-
 .drawer > img {
   float: top;
   height: 50px;
   border: solid var(--color-5-dark);
   border-radius: 10px;
+}
+
+.drawer > img:hover {
+  border-color: var(--color-5-lighter);
 }
 
 /* Animations */

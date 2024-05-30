@@ -92,7 +92,7 @@
     },
     {
       "name": "Beer",
-      "description": "Fishermen's best beer",
+      "description": "Fisherman's best beer",
       "stat": "click",
       "power": 3,
       "max": 10,
