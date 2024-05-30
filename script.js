@@ -17,7 +17,7 @@ const player = {
 
 function onClick(e) {
   if (e.target.id === 'water') {
-    clickWater()
+    clickWater(e)
 
   } else if (e.target.id === 'purchase') {
     Purchase();
@@ -25,20 +25,27 @@ function onClick(e) {
   } else if (e.target.className === 'tab') {
     changeTab(e);
 
-  } else if (e.target.nodeName === 'IMG') {
+  } else if (e.target.nodeName === 'IMG' && e.target.parentElement.className === 'drawer') {
     displayInfo(e);
   }
 }
 
-function clickWater() {
+function clickWater(e) {
   // Increment fish count by click stat
   player.fishCount += player.statClick;
 
+
   // Animation stuff
-  const water = document.getElementById('whirl');
-  water.classList.remove('jump');
-  water.offsetWidth;
-  water.classList.add('jump');
+  const water = document.getElementById('water')
+  const splash = document.createElement('img')
+
+  splash.src = "img/ripple.gif"
+  water.appendChild(splash)
+
+  splash.style.rotate = Math.floor(Math.random() * 360) + 'deg'
+  splash.style.top = e.y - (splash.clientWidth/2) + 'px'
+  splash.style.left =  e.x - (splash.clientHeight/2) + 'px'
+  splash.className = 'jump'
 }
 
 function Purchase() {
@@ -131,4 +138,7 @@ setInterval(() => {
 
 /* Stuff to run when the page loads */
 document.addEventListener('click', onClick);
+document.addEventListener('animationend', e => (
+  e.target.remove()
+))
 displayInfo();
