@@ -159,6 +159,7 @@ ul {
 
 #purchase:hover {
   background-color: var(--color-4);
+  scale: 1.1;
 }
 
 /*Sidebar Middle */
@@ -174,6 +175,14 @@ ul {
   border: 5px var(--color-5) solid;
   padding: 10px;
   margin: 0 auto;
+  scale: 0.9;
+}
+
+.sidebar-middle li:hover {
+  scale: 1;
+  border-color: var(--color-5-lighter);
+  color: white;
+  font-weight: bolder;
 }
 
 .sidebar-middle ul {
@@ -190,22 +199,16 @@ ul {
   background-color: var(--color-5-lightest);
 }
 
-#upgrades {
-  width: 100%;
-  float: right;
-  display: float;
-  justify-items: center;
-}
-
-.drawer > img {
+#upgrades > img {
   float: top;
-  height: 50px;
+  height: 64px;
   border: solid var(--color-5-dark);
   border-radius: 10px;
 }
 
-.drawer > img:hover {
+#upgrades > img:hover {
   border-color: var(--color-5-lighter);
+  scale: 1.1;
 }
 
 footer {

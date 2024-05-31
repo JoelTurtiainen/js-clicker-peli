@@ -6,7 +6,8 @@
       "stat": "click",
       "power": 1,
       "max": 10,
-      "price": 16
+      "price": 16,
+      "itemid": "bread"
     },
     {
       "name": "Corn",
@@ -14,15 +15,17 @@
       "stat": "click",
       "power": 1,
       "max": 10,
-      "price": 32
+      "price": 32,
+      "itemid": "corn"
     },
     {
-      "name": "Worm",
+      "name": "Earthworm",
       "description": "Early bird gets the worm.",
       "stat": "click",
       "power": 2,
       "max": 10,
-      "price": 64
+      "price": 64,
+      "itemid": "worm_earth"
     },
     {
       "name": "Spoon",
@@ -30,7 +33,8 @@
       "stat": "click",
       "power": 2,
       "max": 10,
-      "price": 128
+      "price": 128,
+      "itemid": "spoon"
     },
     {
       "name": "Firefly",
@@ -38,7 +42,17 @@
       "stat": "click",
       "power": 3,
       "max": 10,
-      "price": 256
+      "price": 256,
+      "itemid": "firefly"
+    },
+    {
+      "name": "Waterworm",
+      "description": "Early bird gets the worm.",
+      "stat": "click",
+      "power": 2,
+      "max": 10,
+      "price": 64,
+      "itemid": "worm_water"
     },
     {
       "name": "Spinner",
@@ -46,7 +60,17 @@
       "stat": "click",
       "power": 3,
       "max": 10,
-      "price": 512
+      "price": 512,
+      "itemid": "spinner"
+    },
+    {
+      "name": "Fireworm",
+      "description": "Early bird gets the worm.",
+      "stat": "click",
+      "power": 2,
+      "max": 10,
+      "price": 64,
+      "itemid": "worm_fire"
     },
     {
       "name": "Roe",
@@ -54,15 +78,17 @@
       "stat": "click",
       "power": 4,
       "max": 5,
-      "price": 1024
+      "price": 1024,
+      "itemid": "roe"
     },
     {
-      "name": "Gummy Worm",
+      "name": "Gummyworm",
       "description": "No artificial flavor.",
       "stat": "click",
       "power": 3,
       "max": 10,
-      "price": 2048
+      "price": 2048,
+      "itemid": "worm_gummy"
     },
     {
       "name": "Cola and Eggs",
@@ -70,7 +96,8 @@
       "stat": "click",
       "power": 10,
       "max": 10,
-      "price": 4096
+      "price": 4096,
+      "itemid": "colaeggs"
     }
   ],
   [
@@ -80,7 +107,8 @@
       "stat": "click",
       "power": 1,
       "max": 10,
-      "price": 25
+      "price": 25,
+      "itemid": "hook_worm"
     },
     {
       "name": "Bobber",
@@ -88,7 +116,8 @@
       "stat": "click",
       "power": 2,
       "max": 10,
-      "price": 100
+      "price": 100,
+      "itemid": "bobber"
     },
     {
       "name": "Beer",
@@ -96,7 +125,8 @@
       "stat": "click",
       "power": 3,
       "max": 10,
-      "price": 200
+      "price": 200,
+      "itemid": "beer"
     },
     {
       "name": "Double Hook",
@@ -104,7 +134,8 @@
       "stat": "click",
       "power": 2,
       "max": 10,
-      "price": 100
+      "price": 100,
+      "itemid": "hook"
     },
     {
       "name": "Treble Hook",
@@ -112,7 +143,8 @@
       "stat": "click",
       "power": 3,
       "max": 10,
-      "price": 200
+      "price": 200,
+      "itemid": "hook"
     },
     {
       "name": "Fishing Hat",
@@ -120,7 +152,8 @@
       "stat": "click",
       "power": 3,
       "max": 10,
-      "price": 200
+      "price": 200,
+      "itemid": "fisherhat"
     },
     {
       "name": "Sport Glasses",
@@ -128,7 +161,8 @@
       "stat": "click",
       "power": 3,
       "max": 10,
-      "price": 200
+      "price": 200,
+      "itemid": "sportglasses"
     }
   ],
   [
@@ -138,7 +172,8 @@
       "stat": "auto",
       "power": 1,
       "max": 5,
-      "price": 64
+      "price": 64,
+      "itemid": "net_torn"
     },
     {
       "name": "DIY Fish Trap",
@@ -146,7 +181,8 @@
       "stat": "auto",
       "power": 2,
       "max": 5,
-      "price": 128
+      "price": 128,
+      "itemid": "fishtrap_diy"
     },
     {
       "name": "Blue Net",
@@ -154,7 +190,8 @@
       "stat": "auto",
       "power": 3,
       "max": 5,
-      "price": 256
+      "price": 256,
+      "itemid": "net_blue"
     },
     {
       "name": "Net",
@@ -162,7 +199,8 @@
       "stat": "auto",
       "power": 4,
       "max": 5,
-      "price": 512
+      "price": 512,
+      "itemid": "net"
     },
     {
       "name": "Fish Trap",
@@ -170,7 +208,8 @@
       "stat": "auto",
       "power": 5,
       "max": 5,
-      "price": 1024
+      "price": 1024,
+      "itemid": "fishtrap"
     }
   ]
 ]
