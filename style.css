@@ -43,7 +43,11 @@
   --font-dark: #05100f;
 }
 
-/* Universal */
+
+/*  ┳┳  •         ┓
+    ┃┃┏┓┓┓┏┏┓┏┓┏┏┓┃
+    ┗┛┛┗┗┗┛┗ ┛ ┛┗┻┗ */
+
 
 * {
   overflow: hidden;
@@ -84,17 +88,30 @@ ul {
   list-style-type: none;
 }
 
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: start;
+}
+
+.grid li:nth-child(even) {
+  text-align: end;
+}
+
 .hline {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
 }
 
-/* Playfield */
+/*  ┏┓┓    ┏•  ┓ ┓
+    ┃┃┃┏┓┓┏╋┓┏┓┃┏┫
+    ┣┛┗┗┻┗┫┛┗┗ ┗┗┻
+          ┛         */
 
 #game {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr 15em;
   font-size: 1.5em;
   height: 97vh;
 }
@@ -103,7 +120,6 @@ ul {
   background-image: linear-gradient(steelblue, rgb(83, 83, 208));
   height: 100%;
   border: 1px solid green;
-  width: 100%;
   float: left;
 }
 
@@ -127,7 +143,9 @@ ul {
   grid-template-rows: 4.5fr 1fr 6fr;
 }
 
-/* Sidebar Top */
+/*  ┏┓• ┓  ┓       ┏┳┓    
+    ┗┓┓┏┫┏┓┣┓┏┓┏┓   ┃ ┏┓┏┓
+    ┗┛┗┗┻┗ ┗┛┗┻┛    ┻ ┗┛┣┛  */
 
 .sidebar-top {
   display: grid;
@@ -135,7 +153,7 @@ ul {
   background-color: var(--color-4-dark);
 }
 
-.sidebar-top ul:first-child {
+.header:first-child {
   color: var(--font-dark);
   li:first-child {
     text-decoration: underline;
@@ -151,6 +169,7 @@ ul {
 }
 
 #purchase {
+  display: block;
   background-color: var(--color-4-darker);
   border: 2px #143430 dotted;
   letter-spacing: 2px;
@@ -162,7 +181,11 @@ ul {
   scale: 1.1;
 }
 
-/*Sidebar Middle */
+
+/*  ┏┓• ┓  ┓          • ┓ ┓┓  
+    ┗┓┓┏┫┏┓┣┓┏┓┏┓  ┏┳┓┓┏┫┏┫┃┏┓
+    ┗┛┗┗┻┗ ┗┛┗┻┛   ┛┗┗┗┗┻┗┻┗┗  */
+
 
 .sidebar-middle {
   margin: 0;
@@ -193,7 +216,9 @@ ul {
   height: 100%;
 }
 
-/* Sidebar Bottom */
+/*  ┏┓• ┓  ┓       ┳┓         
+    ┗┓┓┏┫┏┓┣┓┏┓┏┓  ┣┫┏┓╋╋┏┓┏┳┓
+    ┗┛┗┗┻┗ ┗┛┗┻┛   ┻┛┗┛┗┗┗┛┛┗┗ */
 
 .sidebar-bottom {
   background-color: var(--color-5-lightest);
@@ -218,7 +243,10 @@ footer {
   color: var(--color-4-darkest);
 }
 
-/* Animations */
+
+/*  ┏┓  •      •     
+    ┣┫┏┓┓┏┳┓┏┓╋┓┏┓┏┓┏
+    ┛┗┛┗┗┛┗┗┗┻┗┗┗┛┛┗┛  */
 
 .jump {
   animation-duration: 1s;

@@ -1,52 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <section id="game">
-      <div id="field">
-        <div>
-          <ul id="stats">
-            <li>🐟 Fish: <span id="fishCount"></span></li>
-            <li>⚓ Click Power: <span id="statClick"></span></li>
-            <li>🕰️ Fish per/s: <span id="statAuto"></span></li>
-          </ul>
-        </div>
-        <div id="water"></div>
-      </div>
-      <div id="sidebar">
-        <!-- sidebar top -->
-        <div id="infobox" class="sidebar-top image-border">
-          <ul>
-            <li><span class="info"></span></li>
-            <li><span class="info"></span></li>
-          </ul>
-          <ul>
-            <li class="hline">Stat: <span class="info"></span></li>
-            <li class="hline">Owned: <span class="info"></span></li>
-            <li class="hline">Price: <span class="info"></span></li>
-            <li id="purchase">Purchase</li>
-          </ul>
-        </div>
-        <!-- sidebar middle -->
-        <div class="sidebar-middle">
-          <ul class="hline">
-            <li class="tab">Baits</li>
-            <li class="tab">Misc</li>
-            <li class="tab">Nets</li>
-          </ul>
-        </div>
-        <!-- sidebar bottom -->
-        <div class="sidebar-bottom image-border">
-          <div id="upgrades"></div>
-        </div>
-      </div>
-    </section>
-    <script type="module" src="script.js"></script>
-    <footer>Joel Turtiainen 2024</footer>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<section id="game">
+			<div id="field">
+				<div>
+					<ul id="stats"></ul>
+				</div>
+				<div id="water"></div>
+			</div>
+			<div id="sidebar">
+				<!-- sidebar top -->
+				<div id="infobox" class="sidebar-top image-border">
+					<ul class="header"></ul>
+					<div>
+						<ul class="grid"></ul>
+						<a id="purchase">Purchase</a>
+					</div>
+				</div>
+				<!-- sidebar middle -->
+				<div class="sidebar-middle">
+					<ul class="hline">
+						<li class="tab">Baits</li>
+						<li class="tab">Misc</li>
+						<li class="tab">Nets</li>
+					</ul>
+				</div>
+				<!-- sidebar bottom -->
+				<div class="sidebar-bottom image-border">
+					<div id="upgrades"></div>
+				</div>
+			</div>
+		</section>
+		<script type="module" src="script.js"></script>
+		<footer>Joel Turtiainen 2024</footer>
+	</body>
 </html>

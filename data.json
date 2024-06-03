@@ -1,215 +1,215 @@
 [
-  [
-    {
-      "name": "Bread",
-      "description": "TODO",
-      "stat": "click",
-      "power": 1,
-      "max": 10,
-      "price": 16,
-      "itemid": "bread"
-    },
-    {
-      "name": "Corn",
-      "description": "ITS CORN!",
-      "stat": "click",
-      "power": 1,
-      "max": 10,
-      "price": 32,
-      "itemid": "corn"
-    },
-    {
-      "name": "Earthworm",
-      "description": "Early bird gets the worm.",
-      "stat": "click",
-      "power": 2,
-      "max": 10,
-      "price": 64,
-      "itemid": "worm_earth"
-    },
-    {
-      "name": "Spoon",
-      "description": "TODO",
-      "stat": "click",
-      "power": 2,
-      "max": 10,
-      "price": 128,
-      "itemid": "spoon"
-    },
-    {
-      "name": "Firefly",
-      "description": "TODO",
-      "stat": "click",
-      "power": 3,
-      "max": 10,
-      "price": 256,
-      "itemid": "firefly"
-    },
-    {
-      "name": "Waterworm",
-      "description": "Early bird gets the worm.",
-      "stat": "click",
-      "power": 2,
-      "max": 10,
-      "price": 64,
-      "itemid": "worm_water"
-    },
-    {
-      "name": "Spinner",
-      "description": "TODO",
-      "stat": "click",
-      "power": 3,
-      "max": 10,
-      "price": 512,
-      "itemid": "spinner"
-    },
-    {
-      "name": "Fireworm",
-      "description": "Early bird gets the worm.",
-      "stat": "click",
-      "power": 2,
-      "max": 10,
-      "price": 64,
-      "itemid": "worm_fire"
-    },
-    {
-      "name": "Roe",
-      "description": "Fish eggs",
-      "stat": "click",
-      "power": 4,
-      "max": 5,
-      "price": 1024,
-      "itemid": "roe"
-    },
-    {
-      "name": "Gummyworm",
-      "description": "No artificial flavor.",
-      "stat": "click",
-      "power": 3,
-      "max": 10,
-      "price": 2048,
-      "itemid": "worm_gummy"
-    },
-    {
-      "name": "Cola and Eggs",
-      "description": "Viral fishing hack",
-      "stat": "click",
-      "power": 10,
-      "max": 10,
-      "price": 4096,
-      "itemid": "colaeggs"
-    }
-  ],
-  [
-    {
-      "name": "Bait Hook",
-      "description": "You've gotta start from somewhere",
-      "stat": "click",
-      "power": 1,
-      "max": 10,
-      "price": 25,
-      "itemid": "hook_worm"
-    },
-    {
-      "name": "Bobber",
-      "description": "Boing",
-      "stat": "click",
-      "power": 2,
-      "max": 10,
-      "price": 100,
-      "itemid": "bobber"
-    },
-    {
-      "name": "Beer",
-      "description": "Fisherman's best beer",
-      "stat": "click",
-      "power": 3,
-      "max": 10,
-      "price": 200,
-      "itemid": "beer"
-    },
-    {
-      "name": "Double Hook",
-      "description": "TODO",
-      "stat": "click",
-      "power": 2,
-      "max": 10,
-      "price": 100,
-      "itemid": "hook"
-    },
-    {
-      "name": "Treble Hook",
-      "description": "TODO",
-      "stat": "click",
-      "power": 3,
-      "max": 10,
-      "price": 200,
-      "itemid": "hook"
-    },
-    {
-      "name": "Fishing Hat",
-      "description": "TODO",
-      "stat": "click",
-      "power": 3,
-      "max": 10,
-      "price": 200,
-      "itemid": "fisherhat"
-    },
-    {
-      "name": "Sport Glasses",
-      "description": "Makes you feel professional",
-      "stat": "click",
-      "power": 3,
-      "max": 10,
-      "price": 200,
-      "itemid": "sportglasses"
-    }
-  ],
-  [
-    {
-      "name": "Torn Fishing Net",
-      "description": "TODO",
-      "stat": "auto",
-      "power": 1,
-      "max": 5,
-      "price": 64,
-      "itemid": "net_torn"
-    },
-    {
-      "name": "DIY Fish Trap",
-      "description": "You followed a 5-minute life-hack video to craft this. Smells of hot-glue",
-      "stat": "auto",
-      "power": 2,
-      "max": 5,
-      "price": 128,
-      "itemid": "fishtrap_diy"
-    },
-    {
-      "name": "Blue Net",
-      "description": "Made out of cheap blue universal rope",
-      "stat": "auto",
-      "power": 3,
-      "max": 5,
-      "price": 256,
-      "itemid": "net_blue"
-    },
-    {
-      "name": "Net",
-      "description": "TODO",
-      "stat": "auto",
-      "power": 4,
-      "max": 5,
-      "price": 512,
-      "itemid": "net"
-    },
-    {
-      "name": "Fish Trap",
-      "description": "For naughty fish",
-      "stat": "auto",
-      "power": 5,
-      "max": 5,
-      "price": 1024,
-      "itemid": "fishtrap"
-    }
-  ]
+	[
+		{
+			"name": "Bread",
+			"description": "TODO",
+			"stat": "click",
+			"power": 1,
+			"max": 20,
+			"price": 16,
+			"itemid": "bread"
+		},
+		{
+			"name": "Corn",
+			"description": "ITS CORN!",
+			"stat": "click",
+			"power": 1,
+			"max": 20,
+			"price": 32,
+			"itemid": "corn"
+		},
+		{
+			"name": "Earthworm",
+			"description": "Early bird gets the worm.",
+			"stat": "click",
+			"power": 2,
+			"max": 50,
+			"price": 64,
+			"itemid": "worm_earth"
+		},
+		{
+			"name": "Spoon",
+			"description": "TODO",
+			"stat": "click",
+			"power": 2,
+			"max": 50,
+			"price": 128,
+			"itemid": "spoon"
+		},
+		{
+			"name": "Firefly",
+			"description": "TODO",
+			"stat": "click",
+			"power": 3,
+			"max": 50,
+			"price": 256,
+			"itemid": "firefly"
+		},
+		{
+			"name": "Waterworm",
+			"description": "Early bird gets the worm.",
+			"stat": "click",
+			"power": 2,
+			"max": 50,
+			"price": 256,
+			"itemid": "worm_water"
+		},
+		{
+			"name": "Spinner",
+			"description": "TODO",
+			"stat": "click",
+			"power": 3,
+			"max": 50,
+			"price": 512,
+			"itemid": "spinner"
+		},
+		{
+			"name": "Fireworm",
+			"description": "Early bird gets the worm.",
+			"stat": "click",
+			"power": 2,
+			"max": 50,
+			"price": 512,
+			"itemid": "worm_fire"
+		},
+		{
+			"name": "Roe",
+			"description": "Fish eggs",
+			"stat": "click",
+			"power": 4,
+			"max": 50,
+			"price": 1024,
+			"itemid": "roe"
+		},
+		{
+			"name": "Gummyworm",
+			"description": "No artificial flavor.",
+			"stat": "click",
+			"power": 3,
+			"max": 50,
+			"price": 2048,
+			"itemid": "worm_gummy"
+		},
+		{
+			"name": "Cola and Eggs",
+			"description": "Viral fishing hack",
+			"stat": "click",
+			"power": 10,
+			"max": 50,
+			"price": 4096,
+			"itemid": "colaeggs"
+		}
+	],
+	[
+		{
+			"name": "Bait Hook",
+			"description": "You've gotta start from somewhere",
+			"stat": "speed",
+			"power": 1,
+			"max": 50,
+			"price": 16,
+			"itemid": "hook_worm"
+		},
+		{
+			"name": "Bobber",
+			"description": "Boing",
+			"stat": "speed",
+			"power": 2,
+			"max": 50,
+			"price": 32,
+			"itemid": "bobber"
+		},
+		{
+			"name": "Beer",
+			"description": "Fisherman's best beer",
+			"stat": "speed",
+			"power": 3,
+			"max": 50,
+			"price": 64,
+			"itemid": "beer"
+		},
+		{
+			"name": "Double Hook",
+			"description": "TODO",
+			"stat": "speed",
+			"power": 4,
+			"max": 50,
+			"price": 128,
+			"itemid": "hook"
+		},
+		{
+			"name": "Treble Hook",
+			"description": "TODO",
+			"stat": "speed",
+			"power": 5,
+			"max": 50,
+			"price": 256,
+			"itemid": "hook"
+		},
+		{
+			"name": "Fishing Hat",
+			"description": "For every weather",
+			"stat": "speed",
+			"power": 6,
+			"max": 50,
+			"price": 512,
+			"itemid": "fisherhat"
+		},
+		{
+			"name": "Sport Glasses",
+			"description": "Makes you feel professional",
+			"stat": "speed",
+			"power": 7,
+			"max": 50,
+			"price": 1024,
+			"itemid": "sportglasses"
+		}
+	],
+	[
+		{
+			"name": "Torn Fishing Net",
+			"description": "TODO",
+			"stat": "auto",
+			"power": 1,
+			"max": 10,
+			"price": 64,
+			"itemid": "net_torn"
+		},
+		{
+			"name": "DIY Fish Trap",
+			"description": "You followed a 5-minute life-hack video to craft this. Smells of hot-glue",
+			"stat": "auto",
+			"power": 1,
+			"max": 10,
+			"price": 128,
+			"itemid": "fishtrap_diy"
+		},
+		{
+			"name": "Blue Net",
+			"description": "Made out of cheap blue universal rope",
+			"stat": "auto",
+			"power": 1,
+			"max": 60,
+			"price": 256,
+			"itemid": "net_blue"
+		},
+		{
+			"name": "Net",
+			"description": "TODO",
+			"stat": "auto",
+			"power": 1,
+			"max": 80,
+			"price": 512,
+			"itemid": "net"
+		},
+		{
+			"name": "Fish Trap",
+			"description": "Made out of galvanized square steel & borrowed screws from aunt.",
+			"stat": "auto",
+			"power": 1,
+			"max": 100,
+			"price": 1024,
+			"itemid": "fishtrap"
+		}
+	]
 ]
