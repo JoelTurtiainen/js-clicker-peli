@@ -69,7 +69,7 @@ body {
 
 .image-border {
   border: 20px solid;
-  border-image-source: url('img/border.png');
+  border-image-source: url('./img/border.png');
   border-image-slice: 6;
   border-image-width: 20px;
   border-image-repeat: repeat repeat;
@@ -178,6 +178,7 @@ ul {
 
 #purchase:hover {
   background-color: var(--color-4);
+  color: white;
   scale: 1.1;
 }
 
@@ -209,7 +210,7 @@ ul {
 }
 
 .sidebar-middle ul {
-  background-image: url('/img/beam.png');
+  background-image: url('./img/beam.png');
   background-color: var(--color-5-lightest);
   background-repeat: no-repeat;
   background-size: 100% 100%;

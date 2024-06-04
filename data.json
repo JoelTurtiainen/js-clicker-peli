@@ -2,7 +2,7 @@
 	[
 		{
 			"name": "Bread",
-			"description": "TODO",
+			"description": "Can be rolled into balls",
 			"stat": "click",
 			"power": 1,
 			"max": 20,
@@ -19,6 +19,15 @@
 			"itemid": "corn"
 		},
 		{
+			"name": "Horse Fly",
+			"description": "Float like butterfly, sting like a bee",
+			"stat": "click",
+			"power": 1,
+			"max": 20,
+			"price": 32,
+			"itemid": "horsefly"
+		},
+		{
 			"name": "Earthworm",
 			"description": "Early bird gets the worm.",
 			"stat": "click",
@@ -29,7 +38,7 @@
 		},
 		{
 			"name": "Spoon",
-			"description": "TODO",
+			"description": "For big fish",
 			"stat": "click",
 			"power": 2,
 			"max": 50,
@@ -38,7 +47,7 @@
 		},
 		{
 			"name": "Firefly",
-			"description": "TODO",
+			"description": "So shiny",
 			"stat": "click",
 			"power": 3,
 			"max": 50,
@@ -46,17 +55,17 @@
 			"itemid": "firefly"
 		},
 		{
-			"name": "Waterworm",
-			"description": "Early bird gets the worm.",
+			"name": "Popper",
+			"description": "Looks like its made out of cork. Makes a loud pop.",
 			"stat": "click",
 			"power": 2,
 			"max": 50,
 			"price": 256,
-			"itemid": "worm_water"
+			"itemid": "popper"
 		},
 		{
 			"name": "Spinner",
-			"description": "TODO",
+			"description": "Works well for all sized fish",
 			"stat": "click",
 			"power": 3,
 			"max": 50,
@@ -130,7 +139,7 @@
 		},
 		{
 			"name": "Double Hook",
-			"description": "TODO",
+			"description": "Less chance of fish escaping",
 			"stat": "speed",
 			"power": 4,
 			"max": 50,
@@ -139,7 +148,7 @@
 		},
 		{
 			"name": "Treble Hook",
-			"description": "TODO",
+			"description": "Hook on three sides, likes to stick to clothing.",
 			"stat": "speed",
 			"power": 5,
 			"max": 50,
@@ -168,7 +177,7 @@
 	[
 		{
 			"name": "Torn Fishing Net",
-			"description": "TODO",
+			"description": "Has seen better days",
 			"stat": "auto",
 			"power": 1,
 			"max": 10,
@@ -186,7 +195,7 @@
 		},
 		{
 			"name": "Blue Net",
-			"description": "Made out of cheap blue universal rope",
+			"description": "Made out of cheap blue rope",
 			"stat": "auto",
 			"power": 1,
 			"max": 60,
@@ -195,7 +204,7 @@
 		},
 		{
 			"name": "Net",
-			"description": "TODO",
+			"description": "Barely used",
 			"stat": "auto",
 			"power": 1,
 			"max": 80,

@@ -8,7 +8,7 @@ const player = {
 	activeTab: 0,
 	activeItem: 0,
 	itemsOwned: [
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0],
 	],
@@ -72,10 +72,10 @@ function Purchase() {
 function changeTab(e) {
 	const siblings = e.target.parentElement.children;
 	const index = Array.prototype.indexOf.call(siblings, e.target);
-
 	// 1. Update player obj to represent new tab
 	// 2. Reset background for all tabs
 	// 3. Apply background on active tab
+	// 4. Draw Items
 	player.activeTab = index;
 
 	document.querySelectorAll('.tab').forEach((i) => (i.style.backgroundColor = ''));
@@ -88,12 +88,15 @@ function drawItems() {
 	const parent = document.getElementById('upgrades');
 	const tabIndex = player.activeTab;
 	const tabItems = data[tabIndex];
+	// 1. Clear parent
+	// 2. Loop through the tab items in data.json 
+	// 3. Assign the itemid as img.src
+	// 4. Add to DOM
 	parent.innerHTML = '';
 
 	for (let i of tabItems) {
 		const img = document.createElement('img');
 		img.src = './img/' + tabIndex + '/' + i.itemid + '.png';
-		console.log(img.src);
 		parent.appendChild(img);
 	}
 }
@@ -101,17 +104,16 @@ function drawItems() {
 function updateHUD() {
 	// Counters on the top left of the screen
 	const parent = document.getElementById('stats');
-	parent.textContent = '';
-	const desc = ['🐟 Fish:', '⚓ Click Power:', '🕰️ Fish per/s:'];
-	const values = [
-		player.fishCount,
-		player.statClick,
-		player.statAuto * (player.statSpeed / 100 + 1),
-	];
+	parent.textContent = ''
+	const hud = {
+		'🐟Fish: ' : player.fishCount,
+	 	'⚓Click Power: ' : player.statClick,
+	 	'🕰️Fish per/s: ' : fishPerS()
+	};
 
-	for (let i in desc) {
-		const li = document.createElement('li');
-		li.textContent = desc[i] + format(values[i]);
+	for (let key of Object.keys(hud)) {
+		const content = key + format(hud[key])
+		const li = createLi(content)
 		parent.appendChild(li);
 	}
 }
@@ -119,6 +121,7 @@ function updateHUD() {
 function displayInfo(e) {
 	if (e) {
 		const siblings = e.target.parentElement.children;
+		// If called at page load we dont come here
 		// 1. Reset background for all items
 		// 2. Apply background on clicked item
 		// 3. Update active item to player obj
@@ -137,18 +140,39 @@ function displayInfo(e) {
 
 	header.innerHTML = '';
 	content = [item.name, item.description];
-	content.forEach((str) => header.appendChild(createLi([str])));
+	content.forEach((i) => header.appendChild(createLi(i)));
 
 	grid.innerHTML = '';
 	content = [
-		item.stat,
-		'+' + item.power,
-		'Owned: ',
-		itemCount + '/' + item.max,
-		'Price',
+		'Bonus:',
+		[item.stat, " + ", item.power],
+		'Owned:',
+		[itemCount, " / ", item.max],
+		'Price:',
 		item.price * (itemCount + 1),
 	];
-	content.forEach((str) => grid.appendChild(createLi([str])));
+
+	if (item.stat === 'speed') {
+		content[1].push('%')
+	}
+	content.forEach((i) => grid.appendChild(createLi(i)));
+}
+
+function createLi(item) {
+	const li = document.createElement('li');
+	// if (['click', 'auto', 'speed'].includes(item[0])) {
+	// 	const img = document.createElement('img')
+	// 	img.src = './img/stats/' + item[0] + ".png"
+	// 	img.style.scale = 2
+	// 	li.appendChild(img)
+	// }
+
+	if (Array.isArray(item)) {
+		item = item.join('')
+	}
+	
+	li.appendChild(document.createTextNode(item));
+	return li;
 }
 
 function loadSave() {
@@ -161,23 +185,20 @@ function loadSave() {
 	}
 }
 
-function createLi(str) {
-	const li = document.createElement('li');
-	const text = document.createTextNode(str);
-	li.appendChild(text);
-	return li;
-}
-
 function format(num) {
   if (num >= 1e9) {
-    return (num / 1e9).toFixed(3) + "b"
+    return (num / 1e9).toFixed(2) + "b"
   } else if (num >= 1e6) {
-    return (num / 1e6).toFixed(3) + "m"
+    return (num / 1e6).toFixed(2) + "m"
   } else if (num >= 1e3) {
     return (num / 1e3).toFixed(2) + "k"
   }
-  return Math.round(num)
+  return num.toFixed(1)
 }
+
+function fishPerS() {
+	return player.statAuto * (player.statSpeed / 100 + 1)
+};
 
 
 setInterval(() => {
@@ -187,8 +208,7 @@ setInterval(() => {
 
 	// every 1s
 	if (ticks % 10 === 0) {
-		player.fishCount += player.statAuto * (1 + player.statSpeed / 100);
-		console.log(player.statAuto);
+		player.fishCount += fishPerS();
 	}
 	// every 10s
 	if (ticks % 100 === 0) {
@@ -202,8 +222,8 @@ setInterval(() => {
     ┻┛┗┗┗   */
 
 document.addEventListener('click', onClick);
-document.addEventListener('wheel', onClick);
 document.addEventListener('animationend', (e) => e.target.remove());
+//document.addEventListener('wheel', onClick);
 //localStorage.clear();
 loadSave();
 displayInfo();
